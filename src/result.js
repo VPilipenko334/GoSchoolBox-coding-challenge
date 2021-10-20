@@ -1,19 +1,28 @@
+import React from "react";
 import "./result.css"
 
-const Result = () => {
-    return (
-        <div className="results-wrapper">
-            <div className="result">
-                <h2>Result will go here</h2>
+class Result extends React.Component {
+    constructor (props) {
+        super(props);
 
+    }
 
-                <div className="input-wrapper">
-                    <h3>input will go here</h3>
+    render() {
+        return (
+            <div className="results-wrapper">
+                <div className="result">
+                    <h2>Result will go here</h2>
+    
+    
+                    <div className="input-wrapper">
+                        <h3>input will go here</h3>
+                    </div>
+    
                 </div>
-
             </div>
-        </div>
-    )
+        )
+    }
+
 }
 
 export default Result; 
