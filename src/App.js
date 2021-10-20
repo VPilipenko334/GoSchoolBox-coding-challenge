@@ -5,10 +5,19 @@ import "./buttons.css";
 import "./result.css";
 
 function App() {
-
+  
   const [input, setInput] = useState("")
   const [result, setResult] = useState("")
 
+
+  const clear = () => {
+
+  }
+
+  const goBack = () => {
+
+  }
+  
   const allDigits = () => {
     let array = [];
 
