@@ -1,4 +1,4 @@
-import { userState } from 'react';
+import { useState } from 'react';
 
 import Result from "./result";
 import "./buttons.css";
@@ -6,10 +6,8 @@ import "./result.css";
 
 function App() {
 
-  
-
-
-
+  const [input, setInput] = useState("")
+  const [result, setResult] = useState("")
 
   const allDigits = () => {
     let array = [];
@@ -20,8 +18,8 @@ function App() {
       )
     }
 
-    // return array.reverse(); 
-    return array; 
+    return array.reverse(); 
+    // return array; 
   }
 
   return (
