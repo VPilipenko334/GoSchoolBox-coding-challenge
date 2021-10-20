@@ -1,4 +1,6 @@
 import Result from "./result";
+import "./buttons.css";
+import "./result.css";
 
 function App() {
 
@@ -16,29 +18,30 @@ function App() {
 
   return (
       <div className="App">
-        <div className="calculator-wrapper">
-            <div className="result">
-              < Result />
-          </div>
-         
-          <div className="numbers">
-            {allDigits()}
-          </div>
-
-          <div className="basic-operators">
-            <button>+</button>
-            <button>-</button>
-            <button>*</button>
-            <button>/</button>
-          </div>
-
-          <div className="advanced-operators">
+          <div className="calculator-wrapper">
+            <div className="calculator">
+              <div className="result">
+                < Result />
+            </div>
+          
+            <div className="numbers">
+              {allDigits()}
             <button>.</button>
             <button>=</button>
-            <button>CLEAR</button>
-            
-          </div>
+            </div>
 
+            <div className="operators">
+              <button>+</button>
+              <button>-</button>
+              <button>*</button>
+              <button>/</button>
+            </div>
+
+            <div className="clear-button">
+              <button className="clear">CLEAR</button>
+              
+            </div>
+          </div>
         </div>
       </div>
   );

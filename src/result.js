@@ -2,8 +2,10 @@ import "./result.css"
 
 const Result = () => {
     return (
-        <div>
-            Result and input will go here
+        <div className="results-wrapper">
+            <div className="result">
+                <h2>Result will go here</h2>
+            </div>
         </div>
     )
 }
