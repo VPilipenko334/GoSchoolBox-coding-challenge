@@ -13,6 +13,7 @@ function App() {
       )
     }
 
+    // return array.reverse(); 
     return array; 
   }
 
