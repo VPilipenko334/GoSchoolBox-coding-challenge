@@ -1,6 +1,19 @@
 import Result from "./result";
 
 function App() {
+
+  const allDigits = () => {
+    let array = [];
+
+    for (let i = 0; i < 10; i++) {
+      array.push(
+        <button key={i}>{i}</button>
+      )
+    }
+
+    return array; 
+  }
+
   return (
       <div className="App">
         <div className="calculator-wrapper">
@@ -9,7 +22,7 @@ function App() {
           </div>
          
           <div className="numbers">
-            <button>0</button>
+            <button>{allDigits()}</button>
           </div>
 
           <div className="basic-operators">
