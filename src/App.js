@@ -19,28 +19,30 @@ function App() {
 
   return (
       <div className="App">
-          <div className="calculator-wrapper">
-            <div className="calculator">
-              <div className="result">
-                < Result />
-            </div>
-          
-            <div className="numbers">
-              {allDigits()}
-            <button>.</button>
-            <button>=</button>
-            </div>
+        <div className="calculator-border">
+            <div className="calculator-wrapper">
+              <div className="calculator">
+                <div className="result">
+                  < Result />
+              </div>
+            
+              <div className="numbers">
+                {allDigits()}
+              <button>.</button>
+              <button>=</button>
+              </div>
 
-            <div className="operators">
-              <button>+</button>
-              <button>-</button>
-              <button>*</button>
-              <button>/</button>
-            </div>
+              <div className="operators">
+                <button>+</button>
+                <button>-</button>
+                <button>*</button>
+                <button>/</button>
+              </div>
 
-            <div className="clear-button">
-              <button className="clear">CLEAR</button>
-              
+              <div className="clear-button">
+                <button className="clear">CLEAR</button>
+                
+              </div>
             </div>
           </div>
         </div>
