@@ -22,7 +22,7 @@ function App() {
           </div>
          
           <div className="numbers">
-            <button>{allDigits()}</button>
+            {allDigits()}
           </div>
 
           <div className="basic-operators">
