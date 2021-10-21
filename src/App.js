@@ -11,11 +11,9 @@ function App() {
 
   const updateValues = (val) => {
     setInput(input + val);
-  }
 
-  // const handleClick = (e) => {
-  //   setResult(result.concat(e.target.name));
-  // }
+    setResult(eval(input + val))
+  }
 
   const Allclear = () => {
     setResult("");
@@ -44,9 +42,7 @@ function App() {
             <div className="calculator-wrapper">
               <div className="calculator">
                 <div className="result">
-                  {/* < Result />  */}
-                  {result}
-                  {input}
+                  < Result input={input} result={result} /> 
               </div>
             
               <div className="numbers">
@@ -63,11 +59,12 @@ function App() {
                 <button onClick={() => updateValues('(')}>(</button>
                 <button onClick={() => updateValues(')')}>)</button>
                 <button onClick={() => updateValues('^')}>^</button>
-                <button onClick={() => updateValues('%')}>%</button>
+                <button>BK</button>
               </div>
 
               <div className="clear-button">
                 <button className="clear" onClick={Allclear}>CLEAR</button>
+                <br/>
                 
               </div>
             </div>
