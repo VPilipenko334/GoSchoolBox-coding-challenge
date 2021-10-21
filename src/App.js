@@ -17,6 +17,13 @@ function App() {
     setResult(".");
   }
 
+  //not functional; needs additional logic 
+  // const addZero = (val) => {
+  //   if (this.state.input !== "") {
+  //     this.setInput(this.state.input + val)
+  //   }
+  // }
+
   const Allclear = () => {
     setResult("");
     setInput("");
@@ -43,13 +50,14 @@ function App() {
         <div className="calculator-border">
             <div className="calculator-wrapper">
               <div className="calculator">
-                <div className="result">
-                  <Input input={input} />
+                {/* <div className="result-wrapper"> */}
                   <Result result={result} /> 
-              </div>
+                  <Input input={input} />
+              {/* </div> */}
             
               <div className="numbers">
                 {allDigits()}
+              {/* <button onClick={addZero}>0</button> */}
               <button onClick={() => updateValues('.')}>.</button>
               <button onClick={() => goBack()} className="back-button">BK</button>
               </div>

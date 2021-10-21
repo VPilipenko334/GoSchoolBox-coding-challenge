@@ -3,7 +3,20 @@ import React from "react";
 class Input extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {num1: "", num2: ""};
     }
+
+    setNum1(event) {
+        const num1 = event.target.value ? parseInt(event.target.value) : "";
+        this.setState({ num1 });
+    }
+
+    setNum2(event) {
+        const num2 = event.target.value ? parseInt(event.target.value) : "";
+        this.setState({ num2})
+    }
+
+
 
     render() {
         return (
