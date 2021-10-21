@@ -4,11 +4,11 @@ const Result = ({result, input}) => {
     return (
         <div className="results-wrapper">
             <div className="result">
-                <h2>{result}</h2>
+                <h2>{result}hi</h2>
 
 
                 <div className="input-wrapper">
-                    <h3>{input}</h3>
+                    <h3>{input}hello</h3>
                 </div>
 
             </div>

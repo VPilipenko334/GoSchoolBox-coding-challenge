@@ -9,9 +9,13 @@ function App() {
   const [input, setInput] = useState("")
   const [result, setResult] = useState("")
 
-  const handleClick = (e) => {
-    setResult(result.concat(e.target.name));
+  const updateValues = (val) => {
+    setInput(input + val);
   }
+
+  // const handleClick = (e) => {
+  //   setResult(result.concat(e.target.name));
+  // }
 
   const Allclear = () => {
     setResult("");
@@ -26,7 +30,7 @@ function App() {
 
     for (let i = 0; i < 10; i++) {
       array.push(
-        <button key={i}>{i}</button>
+        <button onClick={() => updateValues(i)} key={i}>{i}</button>
       )
     }
 
@@ -40,20 +44,24 @@ function App() {
             <div className="calculator-wrapper">
               <div className="calculator">
                 <div className="result">
-                  < Result />
+                  {/* < Result />  */}
+                  {result}
+                  {input}
               </div>
             
               <div className="numbers">
                 {allDigits()}
-              <button>.</button>
+              <button onClick={() => updateValues('.')}>.</button>
               <button>=</button>
               </div>
 
               <div className="operators">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
+                <button onClick={() => updateValues('+')}>+</button>
+                <button onClick={() => updateValues('-')}>-</button>
+                <button onClick={() => updateValues('*')}>*</button>
+                <button onClick={() => updateValues('/')}>/</button>
+                <button onClick={() => updateValues('(')}>(</button>
+                <button onClick={() => updateValues(')')}>)</button>
               </div>
 
               <div className="clear-button">
