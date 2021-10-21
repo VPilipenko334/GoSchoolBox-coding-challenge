@@ -50,11 +50,12 @@ function App() {
         <div className="calculator-border">
             <div className="calculator-wrapper">
               <div className="calculator">
-                {/* <div className="result-wrapper"> */}
+                <div className="result-wrapper">
                   <Result result={result} /> 
                   <Input input={input} />
-              {/* </div> */}
+              </div>
             
+            <div className="calculator-operators">
               <div className="numbers">
                 {allDigits()}
               {/* <button onClick={addZero}>0</button> */}
@@ -79,6 +80,7 @@ function App() {
                 
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

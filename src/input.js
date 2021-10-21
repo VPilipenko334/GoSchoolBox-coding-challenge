@@ -16,6 +16,11 @@ class Input extends React.Component {
         this.setState({ num2})
     }
 
+    add(e) {
+        e.preventDefault();
+        const result = this.state.num1 + this.state.num2;
+        this.setState({ result })
+    }
 
 
     render() {
