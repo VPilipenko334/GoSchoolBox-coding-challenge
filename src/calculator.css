@@ -1,12 +1,14 @@
 .calculator-border{
     background-color: rgb(130, 203, 206);
     height: 450px;
-    width: 207px; 
+    width: 230px; 
     margin: auto;
     justify-content: center;
-    border-radius: 20px;
     padding: 50px;
     margin-top: 120px;
+    /* background-color: #f3cfc6b0; */
+    border: 10px double #642A11;
+    border-radius: 20px;
 }
 
 .calculator-wrapper {
@@ -36,11 +38,15 @@ button {
     font-size: 20px; 
     cursor: pointer; 
     transition: 0.2s; 
-
 }
 
 .calculator-operators {
-    margin-top: 20px; 
+    margin-top: 20px;
+    /* background-color: #f3cfc6b0; */
+    /* border: 10px double #642A11; */
+    border-radius: 20px; 
+    /* max-width: 250px; */
+    padding: 10px;
 }
 
 button:hover {

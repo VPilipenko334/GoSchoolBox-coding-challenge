@@ -1,8 +1,9 @@
 .result-wrapper{
-    border-radius: 2px solid black;
-    background-color: burlywood;
     width: 207px;
     height: 100px;
     text-align: right;
     right: auto;
+    background-color: #f3cfc6b0;
+    border: 10px double #642A11;
+    border-radius: 20px;
 }
