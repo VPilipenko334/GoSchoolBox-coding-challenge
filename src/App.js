@@ -62,6 +62,8 @@ function App() {
                 <button onClick={() => updateValues('/')}>/</button>
                 <button onClick={() => updateValues('(')}>(</button>
                 <button onClick={() => updateValues(')')}>)</button>
+                <button onClick={() => updateValues('^')}>^</button>
+                <button onClick={() => updateValues('%')}>%</button>
               </div>
 
               <div className="clear-button">
