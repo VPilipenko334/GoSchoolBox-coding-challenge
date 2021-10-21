@@ -22,7 +22,7 @@ function App() {
   }
 
   const goBack = () => {
-    setResult(result.slice(0, result.length -1)); 
+    setInput(input.slice(0, input.length -1)); 
   }
   
   const allDigits = () => {
@@ -49,7 +49,7 @@ function App() {
               <div className="numbers">
                 {allDigits()}
               <button onClick={() => updateValues('.')}>.</button>
-              <button className="back-button">BK</button>
+              <button onClick={() => goBack()} className="back-button">BK</button>
               </div>
 
               <div className="operators">
