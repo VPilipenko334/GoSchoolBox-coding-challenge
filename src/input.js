@@ -1,18 +1,17 @@
 import React from "react";
 
-class Operation extends React.Component {
+class Input extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     render() {
         return (
-            <div>
-                hello 
+            <div className="input-wrapper">
+                <h3>{this.props.input}</h3>
             </div>
         )
     }
 }
 
-export default Operation; 
+export default Input; 

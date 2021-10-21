@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Result from "./result";
-import Operation from './operation';
+import Input from './input';
 import "./calculator.css";
 import "./buttons.css";
 import "./result.css";
@@ -44,7 +44,8 @@ function App() {
             <div className="calculator-wrapper">
               <div className="calculator">
                 <div className="result">
-                  < Result input={input} result={result} /> 
+                  <Input input={input} />
+                  <Result result={result} /> 
               </div>
             
               <div className="numbers">

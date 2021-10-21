@@ -11,11 +11,6 @@ class Result extends React.Component {
             <div className="results-wrapper">
                 <div className="result">
                     <h2>{this.props.result}</h2>
-
-                    <div className="input-wrapper">
-                        <h3>{this.props.input}</h3>
-                    </div>
-
                 </div>
             </div>
         )
