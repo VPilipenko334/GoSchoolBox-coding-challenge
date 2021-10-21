@@ -1,10 +1,6 @@
-* {
-    /* background-color: pink; */
-}
-
 .calculator-border{
     background-color: rgb(130, 203, 206);
-    height: 375px;
+    height: 400px;
     width: 207px; 
     margin: auto;
     justify-content: center;
@@ -19,7 +15,7 @@
     align-items: center;
     justify-content: center;
     width: 300px;
-    height: 400px;
+    /* height: 400px; */
     /* border-radius: 2px solid black;
     border-radius: 15px; */
     overflow: hidden;

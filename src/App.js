@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Result from "./result";
-import "./buttons.css";
+import "./calculator.css";
 import "./result.css";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   const updateValues = (val) => {
     setInput(input + val);
 
-    setResult(eval(input + val))
+    setResult(".")
   }
 
   const Allclear = () => {
