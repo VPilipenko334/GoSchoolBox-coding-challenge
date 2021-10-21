@@ -9,13 +9,16 @@ function App() {
   const [input, setInput] = useState("")
   const [result, setResult] = useState("")
 
+  const handleClick = (e) => {
+    setResult(result.concat(e.target.name));
+  }
 
-  const clear = () => {
+  const Allclear = () => {
     setResult("");
   }
 
   const goBack = () => {
-
+    setResult(result.slice(0, result.length -1)); 
   }
   
   const allDigits = () => {
@@ -54,7 +57,7 @@ function App() {
               </div>
 
               <div className="clear-button">
-                <button className="clear">CLEAR</button>
+                <button className="clear" onClick={Allclear}>CLEAR</button>
                 
               </div>
             </div>
