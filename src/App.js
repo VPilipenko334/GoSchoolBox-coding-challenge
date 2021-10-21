@@ -11,7 +11,7 @@ function App() {
 
 
   const clear = () => {
-
+    setResult("");
   }
 
   const goBack = () => {
