@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Result from "./result";
 import "./calculator.css";
+import "./buttons.css";
 import "./result.css";
 
 function App() {
@@ -12,11 +13,12 @@ function App() {
   const updateValues = (val) => {
     setInput(input + val);
 
-    setResult(".")
+    setResult(".");
   }
 
   const Allclear = () => {
     setResult("");
+    setInput("");
   }
 
   const goBack = () => {
@@ -33,7 +35,6 @@ function App() {
     }
 
     return array.reverse(); 
-    // return array; 
   }
 
   return (
@@ -48,18 +49,18 @@ function App() {
               <div className="numbers">
                 {allDigits()}
               <button onClick={() => updateValues('.')}>.</button>
-              <button>=</button>
+              <button className="back-button">BK</button>
               </div>
 
               <div className="operators">
-                <button onClick={() => updateValues('+')}>+</button>
-                <button onClick={() => updateValues('-')}>-</button>
-                <button onClick={() => updateValues('*')}>*</button>
-                <button onClick={() => updateValues('/')}>/</button>
-                <button onClick={() => updateValues('(')}>(</button>
-                <button onClick={() => updateValues(')')}>)</button>
-                <button onClick={() => updateValues('^')}>^</button>
-                <button>BK</button>
+                <button className="operator" onClick={() => updateValues('+')}>+</button>
+                <button className="operator" onClick={() => updateValues('-')}>-</button>
+                <button className="operator" onClick={() => updateValues('*')}>*</button>
+                <button className="operator" onClick={() => updateValues('/')}>/</button>
+                <button className="operator" onClick={() => updateValues('(')}>(</button>
+                <button className="operator" onClick={() => updateValues(')')}>)</button>
+                <button className="operator" onClick={() => updateValues('^')}>^</button>
+                <button className="operator">=</button>
               </div>
 
               <div className="clear-button">
