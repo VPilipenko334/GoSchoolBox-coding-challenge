@@ -3,7 +3,8 @@
     height: 100px;
     text-align: right;
     right: auto;
-    background-color: #f3cfc6b0;
-    border: 10px double #642A11;
+    background-color: #ced6cb;;
+    border: 7px double #541f08;
     border-radius: 20px;
+    padding: 3px; 
 }
