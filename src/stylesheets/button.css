@@ -46,9 +46,23 @@ button:hover {
     max-width: 80%;
 }
 
-.operator {
+/* .operator-button {
     background-color: #f8961e;
-}
+    justify-content: center;
+    text-decoration: none;
+    appearance: none;
+    outline: none; 
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    margin: 2px;
+    font-size: 22px; 
+    cursor: pointer; 
+    transition: 0.2s; 
+    border: 1px solid #642A11;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 0px rgba(95, 95, 95, 0.247);
+} */
 
 .back-button {
     background-color: #e63946;
@@ -66,13 +80,12 @@ button:hover {
     border: 1px solid #642A11;
     border-radius: 20px;
     box-shadow: 0px 0px 5px 0px rgba(95, 95, 95, 0.247);
-
 }
 
 .clear-button {
-    margin-top: 5px; 
+    margin-top: 7px; 
     border: 1px solid #642A11;
-    border-radius: 20px;
+    border-radius: 15px;
     justify-content: center;
     align-items: center;
     width: 206px;
@@ -84,4 +97,5 @@ button:hover {
     transition: 0.2s; 
     box-shadow: 0px 0px 5px 0px rgba(95, 95, 95, 0.247);
     background-color: #8e88e7;
+    padding: 5px; 
 }

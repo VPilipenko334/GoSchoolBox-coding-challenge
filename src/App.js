@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "./components/button";
 import BackButton from "./components/back_button";
-import ClearButton from "./components/clear_button";
 import Result from "./components/result";
 import Input from './components/input';
 import "./stylesheets/calculator.css"
@@ -21,12 +20,29 @@ class App extends React.Component {
     };
   }
 
+  setNum1(e) {
+    const num1 = e.target.value ? parseInt(e.target.value) : ""
+    this.setState( { num1 });
+  }
+
+  setNum2(e) {
+    const num2 = e.target.value ? parseInt(e.target.value) : ""
+    this.setState( { num2 })
+  }
+
+
   updateValues = (value) => {
     this.setState({ input: this.state.input + value });
   }
   
-  allClear = () => {
-    this.setState({ input: "" })
+  allClear = (e) => {
+    e.preventDefault();
+    this.setState({
+      input: "",
+      num1: "",
+      num2: "",
+      result: ""
+    })
   }
 
   goBack = () => {
@@ -64,7 +80,7 @@ class App extends React.Component {
                 <Button handleClick={this.updateValues}>1</Button>
                 <Button handleClick={this.updateValues}>0</Button>
                 <Button handleClick={this.updateValues}>.</Button>
-                <BackButton className="back-button" handleClick={this.goBack}>BK</BackButton>
+                <BackButton handleClick={this.goBack}>BK</BackButton>
               </div>
 
               <div className="numbers">
@@ -79,8 +95,8 @@ class App extends React.Component {
             
               </div>
 
-              <div className="clear-button">
-                <ClearButton onClick={() => this.allClear}>CLEAR</ClearButton>
+              <div className="clear-button-wrapper">
+                    <button className="clear-button" onClick={this.allClear}>CLEAR</button>
                 <br/>
               </div>
 
