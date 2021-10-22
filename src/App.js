@@ -14,7 +14,7 @@ function App() {
   const updateValues = (val) => {
     setInput(input + val);
 
-    setResult("");
+    setResult(".");
   }
 
   //not functional; needs additional logic 
