@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "./components/button";
-import BackButton from "./components/back_button";
 import Result from "./components/result";
 import Input from './components/input';
 import "./stylesheets/calculator.css"
@@ -30,6 +29,11 @@ class App extends React.Component {
     this.setState( { num2 })
   }
 
+  add(e) {
+    e.preventDefault();
+    const result = this.state.num1 + this.state.num2
+  }
+
 
   updateValues = (value) => {
     this.setState({ input: this.state.input + value });
@@ -45,8 +49,10 @@ class App extends React.Component {
     })
   }
 
-  goBack = () => {
-    this.setState({ input: this.state.input.slice(0, this.state.input.length) })
+  goBack = (e) => {
+    e.preventDefault();
+    this.setState({ 
+      input: this.state.input.slice(0, this.state.input.length - 1) })
   }
  
 
@@ -80,7 +86,8 @@ class App extends React.Component {
                 <Button handleClick={this.updateValues}>1</Button>
                 <Button handleClick={this.updateValues}>0</Button>
                 <Button handleClick={this.updateValues}>.</Button>
-                <BackButton handleClick={this.goBack}>BK</BackButton>
+                {/* <BackButton handleClick={this.goBack}>BK</BackButton> */}
+                <button onClick={this.goBack} className="back-button">BK</button>
               </div>
 
               <div className="numbers">
