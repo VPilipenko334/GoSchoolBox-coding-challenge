@@ -3,7 +3,18 @@ import React from "react";
 class Input extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {num1: "", num2: ""};
+        
+        this.state = {
+            input: "",
+            num1: "",
+            num2: "",
+            operation: "",
+            result: ""
+        };
+    }
+
+    updateValues = (val) => {
+        this.setState({ input: this.state.input + val });
     }
 
     setNum1(event) {
