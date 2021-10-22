@@ -12,28 +12,52 @@ class App extends React.Component {
 
     this.state = {
       input: "",
-      num1: "",
-      num2: "",
+      prevNum: "",
+      nextNum: "",
       operation: "",
       result: ""
     };
   }
 
-  setNum1(e) {
-    const num1 = e.target.value ? parseInt(e.target.value) : ""
-    this.setState( { num1 });
+  setPrevNum(e) {
+    const prevNum = e.target.value ? parseInt(e.target.value) : ""
+    this.setState( { prevNum });
   }
 
-  setNum2(e) {
-    const num2 = e.target.value ? parseInt(e.target.value) : ""
-    this.setState( { num2 })
+  setNextNum(e) {
+    const nextNum = e.target.value ? parseInt(e.target.value) : ""
+    this.setState( { nextNum })
   }
 
   add(e) {
     e.preventDefault();
-    const result = this.state.num1 + this.state.num2
+    const result = this.state.prevNum + this.state.nextNum;
+    this.setState({ result })
   }
 
+  subtract(e) {
+    e.preventDefault(); 
+    const result = this.state.prevNum - this.state.nextNum;
+    this.setState({ result })
+  }
+
+  multiply(e) {
+    e.preventDefault();
+    const result = this.state.prevNum * this.state.nextNum;
+    this.setState({ result })
+  }
+
+  divide(e) {
+    e.preventDefault();
+    const result = this.state.prevNum / this.state.nextNum;
+    this.setState({ result })
+  }
+
+  exponent(e) {
+    e.preventDefault();
+    const result = this.state.prevNum ** this.state.nextNum;
+    this.setState({ result })
+  } 
 
   updateValues = (value) => {
     this.setState({ input: this.state.input + value });
@@ -43,8 +67,8 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({
       input: "",
-      num1: "",
-      num2: "",
+      prevNum: "",
+      nextNum: "",
       result: ""
     })
   }
