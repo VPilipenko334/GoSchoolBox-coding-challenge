@@ -2,8 +2,8 @@ import React from "react";
 import Button from "./components/button";
 import BackButton from "./components/back_button";
 import ClearButton from "./components/clear_button";
-// import Result from "./components/result";
-// import Input from './components/input';
+import Result from "./components/result";
+import Input from './components/input';
 import "./stylesheets/calculator.css"
 import "./stylesheets/button.css";
 import "./stylesheets/result.css";
@@ -17,7 +17,7 @@ class App extends React.Component {
       num1: "",
       num2: "",
       operation: "",
-      result: "0"
+      result: ""
     };
   }
 
@@ -33,19 +33,22 @@ class App extends React.Component {
     this.setState({ input: this.state.input.slice(0, this.state.input.length) })
   }
  
+
   render() {
-  return (
+    return (
       <div className="App">
         <div className="calculator-border">
             <div className="calculator-wrapper">
               <div className="calculator">
                 <div className="result-wrapper">
-                   {/* < Input /> 
-                  < Result />  */}
-                  <br />
-                  {this.state.input}
-                  <br/>
-                  {this.state.result}
+      
+                  <Input>
+                    {this.state.input === "" ? 0 : this.state.input}
+                  </Input>
+
+                  <Result>
+                    {this.state.result}
+                  </Result>
               </div>
             
             <div className="calculator-operators">
@@ -79,8 +82,8 @@ class App extends React.Component {
               <div className="clear-button">
                 <ClearButton onClick={() => this.allClear}>CLEAR</ClearButton>
                 <br/>
-                
               </div>
+
             </div>
           </div>
           </div>

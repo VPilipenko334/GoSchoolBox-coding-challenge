@@ -6,7 +6,7 @@ class Result extends React.Component {
         return (
             <div className="results-wrapper">
                 <div className="result">
-                    <h2>{this.props.result}</h2>
+                    <h2>{this.props.children}</h2>
                 </div>
             </div>
         )
