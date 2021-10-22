@@ -46,29 +46,29 @@ class App extends React.Component {
             
             <div className="calculator-operators">
               <div className="numbers">
-                <Button className="button" handleClick={this.updateValues}>9</Button>
-                <Button className="button" handleClick={this.updateValues}>8</Button>
-                <Button className="button" handleClick={this.updateValues}>7</Button>
-                <Button className="button" handleClick={this.updateValues}>6</Button>
-                <Button className="button" handleClick={this.updateValues}>5</Button>
-                <Button className="button" handleClick={this.updateValues}>4</Button>
-                <Button className="button" handleClick={this.updateValues}>3</Button>
-                <Button className="button" handleClick={this.updateValues}>2</Button>
-                <Button className="button" handleClick={this.updateValues}>1</Button>
-                <Button className="button" handleClick={this.updateValues}>0</Button>
-                <Button className="button" handleClick={this.updateValues}>.</Button>
+                <Button handleClick={this.updateValues}>9</Button>
+                <Button handleClick={this.updateValues}>8</Button>
+                <Button handleClick={this.updateValues}>7</Button>
+                <Button handleClick={this.updateValues}>6</Button>
+                <Button handleClick={this.updateValues}>5</Button>
+                <Button handleClick={this.updateValues}>4</Button>
+                <Button handleClick={this.updateValues}>3</Button>
+                <Button handleClick={this.updateValues}>2</Button>
+                <Button handleClick={this.updateValues}>1</Button>
+                <Button handleClick={this.updateValues}>0</Button>
+                <Button handleClick={this.updateValues}>.</Button>
                 <Button className="back-button" handleClick={this.goBack}>BK</Button>
               </div>
 
-              <div className="operators">
-                <button className="operator" handleClick={() => this.updateValues}>+</button>
-                <button className="operator" handleClick={this.updateValues}>-</button>
-                <button className="operator" handleClick={this.updateValues}>*</button>
-                <button className="operator" handleClick={this.updateValues}>/</button>
-                <button className="operator" handleClick={this.updateValues}>(</button>
-                <button className="operator" handleClick={this.updateValues}>)</button>
-                <button className="operator" handleClick={this.updateValues}>^</button>
-                <button className="operator">=</button>
+              <div className="numbers">
+                <Button handleClick={this.updateValues}>+</Button>
+                <Button handleClick={this.updateValues}>-</Button>
+                <Button handleClick={this.updateValues}>*</Button>
+                <Button handleClick={this.updateValues}>/</Button>
+                <Button handleClick={this.updateValues}>(</Button>
+                <Button handleClick={this.updateValues}>)</Button>
+                <Button handleClick={this.updateValues}>^</Button>
+                <Button>=</Button>
             
               </div>
 
