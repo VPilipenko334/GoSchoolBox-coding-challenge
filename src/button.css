@@ -3,7 +3,7 @@
     font-weight: bolder;
 }
 
-button {
+.button {
     justify-content: center;
     text-decoration: none;
     appearance: none;
