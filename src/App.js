@@ -1,10 +1,12 @@
 import React from "react";
-import Button from "./button";
-import Result from "./result";
-import Input from './input';
-import "./calculator.css";
-import "./button.css";
-import "./result.css";
+import Button from "./components/button";
+import BackButton from "./components/back_button";
+import ClearButton from "./components/clear_button";
+// import Result from "./components/result";
+// import Input from './components/input';
+import "./stylesheets/calculator.css"
+import "./stylesheets/button.css";
+import "./stylesheets/result.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +17,7 @@ class App extends React.Component {
       num1: "",
       num2: "",
       operation: "",
-      result: ""
+      result: "0"
     };
   }
 
@@ -38,10 +40,12 @@ class App extends React.Component {
             <div className="calculator-wrapper">
               <div className="calculator">
                 <div className="result-wrapper">
-                   < Input /> 
-                  < Result /> 
+                   {/* < Input /> 
+                  < Result />  */}
+                  <br />
                   {this.state.input}
-                  {/* {this.state.result} */}
+                  <br/>
+                  {this.state.result}
               </div>
             
             <div className="calculator-operators">
@@ -57,7 +61,7 @@ class App extends React.Component {
                 <Button handleClick={this.updateValues}>1</Button>
                 <Button handleClick={this.updateValues}>0</Button>
                 <Button handleClick={this.updateValues}>.</Button>
-                <Button className="back-button" handleClick={this.goBack}>BK</Button>
+                <BackButton className="back-button" handleClick={this.goBack}>BK</BackButton>
               </div>
 
               <div className="numbers">
@@ -73,7 +77,7 @@ class App extends React.Component {
               </div>
 
               <div className="clear-button">
-                <button className="clear" onClick={() => this.allClear}>CLEAR</button>
+                <ClearButton onClick={() => this.allClear}>CLEAR</ClearButton>
                 <br/>
                 
               </div>
