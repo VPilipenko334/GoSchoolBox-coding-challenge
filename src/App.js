@@ -63,7 +63,7 @@ class App extends React.Component {
   }
 
   exponent = () => {
-    this.state.preventDefault = this.state.input;
+    this.state.prevNum = this.state.input;
     const firstNum = this.state.input;
     this.setState({ input: firstNum + "^" })
     this.setState.operation = "exponent"
@@ -71,10 +71,10 @@ class App extends React.Component {
 
   equals = (e) => {
     e.preventDefault();
-    this.state.prevNum = this.state.input; 
+    this.state.newNum = this.state.input; 
 
       if (this.state.operation === "add" ) {
-        this.setState({ input: parseInt(this.state.prevNum) + parseInt(this.state.nextNum) })
+        this.setState({ input: this.state.prevNum + this.state.nextNum })
       } else if (this.state.operation === "subtract") {
         this.setState({ input: parseInt(this.state.prevNum) - parseInt(this.state.nextNum)})
       } else if (this.operation === "multiply") {
@@ -112,7 +112,7 @@ class App extends React.Component {
  
 
   render() {
-    const { input, prevNum, nextNum, result } = this.state; 
+    // const { input, prevNum, nextNum, result } = this.state; 
     return (
       <div className="App">
         <div className="calculator-border">
@@ -144,7 +144,7 @@ class App extends React.Component {
                 <Button handleClick={this.updateValues}>.</Button>
                 <button onClick={this.goBack} className="back-button">BK</button>
               </div>
-
+ 
               <div className="numbers">
                 <Button handleClick={this.add}>+</Button>
                 <Button handleClick={this.subtract}>-</Button>
@@ -154,7 +154,7 @@ class App extends React.Component {
                 <Button handleClick={this.updateValues}>)</Button>
                 <Button handleClick={this.exponent}>^</Button>
                 <Button handleCLick={this.equals}>=</Button>
-            
+                <button onClick={() => this.equals}>=</button>
               </div>
 
               <div className="clear-button-wrapper">
