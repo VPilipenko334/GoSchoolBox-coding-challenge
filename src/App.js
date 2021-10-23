@@ -17,6 +17,7 @@ class App extends React.Component {
       operation: "",
       result: ""
     };
+
   }
 
   setPrevNum(e) {
@@ -81,6 +82,7 @@ class App extends React.Component {
  
 
   render() {
+    const { input, prevNum, nextNum, result } = this.state; 
     return (
       <div className="App">
         <div className="calculator-border">
@@ -110,7 +112,6 @@ class App extends React.Component {
                 <Button handleClick={this.updateValues}>1</Button>
                 <Button handleClick={this.updateValues}>0</Button>
                 <Button handleClick={this.updateValues}>.</Button>
-                {/* <BackButton handleClick={this.goBack}>BK</BackButton> */}
                 <button onClick={this.goBack} className="back-button">BK</button>
               </div>
 
