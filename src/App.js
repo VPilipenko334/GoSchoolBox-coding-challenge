@@ -12,7 +12,7 @@ class App extends React.Component {
 
     this.state = {
       input: "",
-      prevNum: "",
+      number: "",
       operation: "",
       result: ""
     };
@@ -24,37 +24,28 @@ class App extends React.Component {
   }
 
   add = () => {
-    this.setState({ prevNum : this.state.input })
     let firstNum = this.state.input;
-    this.setState({ input: firstNum + "+" })
-    this.setState({ operation: "add" })
+    this.setState({ number: this.state.input, input: firstNum + "+", operation: "add"})
   }
 
   subtract = () => {
-    this.setState({ prevNum : this.state.input})
     let firstNum = this.state.input; 
-    this.setState({ input: firstNum + "-" })
-    this.setState({ operation : "subtract" })
+    this.setState({ number: this.state.input, input: firstNum + "-", operation: "subtract" })
   }
 
   multiply = () => {
-    this.setState({ prevNum : this.state.input })
     let firstNum = this.state.input; 
-    this.setState({ input: firstNum + "*" })
-    this.setState({ operation: "multiply" })
+    this.setState({ number: this.state.input, input: firstNum + "*", operation: "multiply" })
   }
 
   divide = () => {
-    this.setState({ prevNum : this.state.input }) 
     let firstNum = this.state.input; 
-    this.setState({ input: firstNum + "/" })
-    this.setState({ operation: "divide" })
+    this.setState({ number: this.state.input, input: firstNum + "/", operation: "divide" }) 
   }
 
   exponent = () => {
     let firstNum = this.state.input;
-    this.setState({ prevNum: this.state.input, input: firstNum + "^" })
-    this.setState({ operation: "exponent" })
+    this.setState({ number: this.state.input, input: firstNum + "^", operation: "exponent" })
   } 
 
   equals = () => {
@@ -62,13 +53,13 @@ class App extends React.Component {
       if (this.state.operation === "add" ) {
         this.setState({ result: parseInt(this.state.input) + parseInt(this.state.input) })
       } else if (this.state.operation === "subtract") {
-        this.setState({ result: parseInt(this.state.prevNum) - parseInt(this.state.input)})
+        this.setState({ result: parseInt(this.state.number) - parseInt(this.state.input)})
       } else if (this.operation === "multiply") {
-        this.setState({ result: parseInt(this.state.prevNum) * parseInt(this.state.input )})
+        this.setState({ result: parseInt(this.state.number) * parseInt(this.state.input )})
       } else if (this.operation === "divide") {
-        this.setState({ result: parseInt(this.state.prevNum) / parseInt(this.state.input )})
+        this.setState({ result: parseInt(this.state.number) / parseInt(this.state.input )})
       } else if (this.operation === "exponent") {
-        this.setState({ result: parseInt(this.state.prevNum) ** parseInt(this.state.input )})
+        this.setState({ result: parseInt(this.state.number) ** parseInt(this.state.input )})
       }
   }
   
@@ -76,7 +67,7 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({
       input: "",
-      prevNum: "",
+      number: "",
       result: ""
     })
   }
@@ -97,7 +88,6 @@ class App extends React.Component {
  
 
   render() {
-    // const { input, prevNum, result } = this.state; 
     return (
       <div className="App">
         <div className="calculator-border">
