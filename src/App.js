@@ -34,34 +34,56 @@ class App extends React.Component {
     e.preventDefault();
     const result = this.state.prevNum + this.state.nextNum;
     this.setState({ result })
+    this.setState.operation = "add";
   }
 
   subtract(e) {
     e.preventDefault(); 
     const result = this.state.prevNum - this.state.nextNum;
     this.setState({ result })
+    this.setState.operation = "subtract"
   }
 
   multiply(e) {
     e.preventDefault();
     const result = this.state.prevNum * this.state.nextNum;
     this.setState({ result })
+    this.setState.operation = "multiply"
   }
 
   divide(e) {
     e.preventDefault();
     const result = this.state.prevNum / this.state.nextNum;
     this.setState({ result })
+    this.setState.operation = "divide"
   }
 
   exponent(e) {
     e.preventDefault();
     const result = this.state.prevNum ** this.state.nextNum;
     this.setState({ result })
+    this.setState.operation = "exponent"
   } 
 
   updateValues = (value) => {
     this.setState({ input: this.state.input + value });
+  }
+
+  equals = (e) => {
+    e.preventDefault();
+    this.state.prevNum = this.state.input; 
+
+      if (this.state.operation === "add" ) {
+        this.setState({ input: parseInt(this.state.prevNum) + parseInt(this.state.nextNum) })
+      } else if (this.state.operation === "subtract") {
+        this.setState({ input: parseInt(this.state.prevNum) - parseInt(this.state.nextNum)})
+      } else if (this.operation === "multiply") {
+        this.setState({ input: parseInt(this.state.prevNum) + parseInt(this.state.nextNum )})
+      } else if (this.operation === "divide") {
+        this.setState({ input: parseInt(this.state.prevNum) + parseInt(this.state.nextNum )})
+      } else if (this.operation === "exponent") {
+        this.setState({ input: parseInt(this.state.prevNum) + parseInt(this.state.nextNum )})
+      }
   }
   
   allClear = (e) => {
@@ -73,6 +95,7 @@ class App extends React.Component {
       result: ""
     })
   }
+
 
   goBack = (e) => {
     e.preventDefault();
