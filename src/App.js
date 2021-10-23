@@ -20,58 +20,47 @@ class App extends React.Component {
 
   }
 
-  // setPrevNum(e) {
-  //   const prevNum = e.target.value ? parseInt(e.target.value) : ""
-  //   this.setState( { prevNum });
-  // }
-
-  // setNextNum(e) {
-  //   const nextNum = e.target.value ? parseInt(e.target.value) : ""
-  //   this.setState( { nextNum })
-  // }
-
   updateValues = (value) => {
     this.setState({ input: this.state.input + value });
   }
 
   add = () => {
-    this.state.prevNum = this.state.input;
-    const firstNum = this.state.input;
+    this.setState({ prevNum : this.state.input })
+    let firstNum = this.state.input;
     this.setState({ input: firstNum + "+" })
     this.setState.operation = "add";
   }
 
   subtract = () => {
-    this.state.prevNum = this.state.input;
-    const firstNum = this.state.input; 
+    this.setState({ prevNum : this.state.input})
+    let firstNum = this.state.input; 
     this.setState({ input: firstNum + "-" })
     this.setState.operation = "subtract"
   }
 
   multiply = () => {
-    this.state.prevNum = this.state.input;
-    const firstNum = this.state.input; 
+    this.setState({ prevNum : this.state.input })
+    let firstNum = this.state.input; 
     this.setState({ input: firstNum + "*" })
     this.setState.operation = "multiply"
   }
 
   divide = () => {
-    this.state.prevNum = this.state.input; 
-    const firstNum = this.state.input; 
+    this.setState({ prevNum : this.state.input }) 
+    let firstNum = this.state.input; 
     this.setState({ input: firstNum + "/" })
     this.setState.operation = "divide"
   }
 
   exponent = () => {
-    this.state.prevNum = this.state.input;
-    const firstNum = this.state.input;
+    this.setState({ prevNum : this.state.input })
+    let firstNum = this.state.input;
     this.setState({ input: firstNum + "^" })
     this.setState.operation = "exponent"
   } 
 
-  equals = (e) => {
-    e.preventDefault();
-    this.state.newNum = this.state.input; 
+  equals = () => {
+    this.setState({ nextNum : this.state.input});
 
       if (this.state.operation === "add" ) {
         this.setState({ input: this.state.prevNum + this.state.nextNum })
@@ -153,8 +142,7 @@ class App extends React.Component {
                 <Button handleClick={this.updateValues}>(</Button>
                 <Button handleClick={this.updateValues}>)</Button>
                 <Button handleClick={this.exponent}>^</Button>
-                <Button handleCLick={this.equals}>=</Button>
-                <button onClick={() => this.equals}>=</button>
+                <Button handleClick={this.equals}>=</Button>
               </div>
 
               <div className="clear-button-wrapper">
