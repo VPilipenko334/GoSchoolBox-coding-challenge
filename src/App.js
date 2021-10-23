@@ -32,35 +32,36 @@ class App extends React.Component {
 
   add = () => {
     this.state.prevNum = this.state.input;
-    this.setState({ input: this.state.input + "+" })
+    const firstNum = this.state.input;
+    this.setState({ input: firstNum + "+" })
     this.setState.operation = "add";
   }
 
-  subtract() {
-    // e.preventDefault(); 
-    const result = this.state.prevNum - this.state.nextNum;
-    this.setState({ result })
+  subtract = () => {
+    this.state.prevNum = this.state.input;
+    const firstNum = this.state.input; 
+    this.setState({ input: firstNum + "-" })
     this.setState.operation = "subtract"
   }
 
-  multiply() {
-    // e.preventDefault();
-    const result = this.state.prevNum * this.state.nextNum;
-    this.setState({ result })
+  multiply = () => {
+    this.state.prevNum = this.state.input;
+    const firstNum = this.state.input; 
+    this.setState({ input: firstNum + "*" })
     this.setState.operation = "multiply"
   }
 
-  divide() {
-    // e.preventDefault();
-    const result = this.state.prevNum / this.state.nextNum;
-    this.setState({ result })
+  divide = () => {
+    this.state.prevNum = this.state.input; 
+    const firstNum = this.state.input; 
+    this.setState({ input: firstNum + "/" })
     this.setState.operation = "divide"
   }
 
-  exponent() {
-    // e.preventDefault();
-    const result = this.state.prevNum ** this.state.nextNum;
-    this.setState({ result })
+  exponent = () => {
+    this.state.preventDefault = this.state.input;
+    const firstNum = this.state.input;
+    this.setState({ input: firstNum + "^" })
     this.setState.operation = "exponent"
   } 
 
