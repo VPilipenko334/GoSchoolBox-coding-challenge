@@ -63,7 +63,7 @@ class App extends React.Component {
     this.setState({ nextNum : this.state.input});
 
       if (this.state.operation === "add" ) {
-        this.setState({ input: this.state.prevNum + this.state.nextNum })
+        this.setState({ result: this.state.prevNum + this.state.nextNum }) 
       } else if (this.state.operation === "subtract") {
         this.setState({ input: parseInt(this.state.prevNum) - parseInt(this.state.nextNum)})
       } else if (this.operation === "multiply") {
