@@ -20,46 +20,45 @@ class App extends React.Component {
 
   }
 
-  setPrevNum(e) {
-    const prevNum = e.target.value ? parseInt(e.target.value) : ""
-    this.setState( { prevNum });
-  }
+  // setPrevNum(e) {
+  //   const prevNum = e.target.value ? parseInt(e.target.value) : ""
+  //   this.setState( { prevNum });
+  // }
 
-  setNextNum(e) {
-    const nextNum = e.target.value ? parseInt(e.target.value) : ""
-    this.setState( { nextNum })
-  }
+  // setNextNum(e) {
+  //   const nextNum = e.target.value ? parseInt(e.target.value) : ""
+  //   this.setState( { nextNum })
+  // }
 
-  add(e) {
-    e.preventDefault();
-    const result = this.state.prevNum + this.state.nextNum;
-    this.setState({ result })
+  add = () => {
+    this.state.prevNum = this.state.input;
+    this.setState({ input: this.state.input + "+" })
     this.setState.operation = "add";
   }
 
-  subtract(e) {
-    e.preventDefault(); 
+  subtract() {
+    // e.preventDefault(); 
     const result = this.state.prevNum - this.state.nextNum;
     this.setState({ result })
     this.setState.operation = "subtract"
   }
 
-  multiply(e) {
-    e.preventDefault();
+  multiply() {
+    // e.preventDefault();
     const result = this.state.prevNum * this.state.nextNum;
     this.setState({ result })
     this.setState.operation = "multiply"
   }
 
-  divide(e) {
-    e.preventDefault();
+  divide() {
+    // e.preventDefault();
     const result = this.state.prevNum / this.state.nextNum;
     this.setState({ result })
     this.setState.operation = "divide"
   }
 
-  exponent(e) {
-    e.preventDefault();
+  exponent() {
+    // e.preventDefault();
     const result = this.state.prevNum ** this.state.nextNum;
     this.setState({ result })
     this.setState.operation = "exponent"
@@ -139,14 +138,14 @@ class App extends React.Component {
               </div>
 
               <div className="numbers">
-                <Button handleClick={this.updateValues}>+</Button>
-                <Button handleClick={this.updateValues}>-</Button>
-                <Button handleClick={this.updateValues}>*</Button>
-                <Button handleClick={this.updateValues}>/</Button>
+                <Button handleClick={this.add}>+</Button>
+                <Button handleClick={this.subtract}>-</Button>
+                <Button handleClick={this.multiply}>*</Button>
+                <Button handleClick={this.divide}>/</Button>
                 <Button handleClick={this.updateValues}>(</Button>
                 <Button handleClick={this.updateValues}>)</Button>
-                <Button handleClick={this.updateValues}>^</Button>
-                <Button>=</Button>
+                <Button handleClick={this.exponent}>^</Button>
+                <Button handleCLick={this.equals}>=</Button>
             
               </div>
 
