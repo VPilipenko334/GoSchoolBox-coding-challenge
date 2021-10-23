@@ -78,11 +78,11 @@ class App extends React.Component {
       } else if (this.state.operation === "subtract") {
         this.setState({ input: parseInt(this.state.prevNum) - parseInt(this.state.nextNum)})
       } else if (this.operation === "multiply") {
-        this.setState({ input: parseInt(this.state.prevNum) + parseInt(this.state.nextNum )})
+        this.setState({ input: parseInt(this.state.prevNum) * parseInt(this.state.nextNum )})
       } else if (this.operation === "divide") {
-        this.setState({ input: parseInt(this.state.prevNum) + parseInt(this.state.nextNum )})
+        this.setState({ input: parseInt(this.state.prevNum) / parseInt(this.state.nextNum )})
       } else if (this.operation === "exponent") {
-        this.setState({ input: parseInt(this.state.prevNum) + parseInt(this.state.nextNum )})
+        this.setState({ input: parseInt(this.state.prevNum) ** parseInt(this.state.nextNum )})
       }
   }
   
