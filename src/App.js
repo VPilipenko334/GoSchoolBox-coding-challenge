@@ -13,7 +13,6 @@ class App extends React.Component {
     this.state = {
       input: "",
       prevNum: "",
-      nextNum: "",
       operation: "",
       result: ""
     };
@@ -54,24 +53,22 @@ class App extends React.Component {
 
   exponent = () => {
     let firstNum = this.state.input;
-    this.setState({ prevNum: this.state.input, input: firstNum + "^"  })
+    this.setState({ prevNum: this.state.input, input: firstNum + "^" })
     this.setState({ operation: "exponent" })
   } 
 
   equals = () => {
-    this.setState({ nextNum : this.state.input});
-    // this.setState({ result : this.state.result});
 
       if (this.state.operation === "add" ) {
-        this.setState({ result: parseInt(this.state.prevNum) + parseInt(this.state.nextNum) })
+        this.setState({ result: parseInt(this.state.input) + parseInt(this.state.input) })
       } else if (this.state.operation === "subtract") {
-        this.setState({ result: parseInt(this.state.prevNum) - parseInt(this.state.nextNum)})
+        this.setState({ result: parseInt(this.state.prevNum) - parseInt(this.state.input)})
       } else if (this.operation === "multiply") {
-        this.setState({ result: parseInt(this.state.prevNum) * parseInt(this.state.nextNum )})
+        this.setState({ result: parseInt(this.state.prevNum) * parseInt(this.state.input )})
       } else if (this.operation === "divide") {
-        this.setState({ result: parseInt(this.state.prevNum) / parseInt(this.state.nextNum )})
+        this.setState({ result: parseInt(this.state.prevNum) / parseInt(this.state.input )})
       } else if (this.operation === "exponent") {
-        this.setState({ result: parseInt(this.state.prevNum) ** parseInt(this.state.nextNum )})
+        this.setState({ result: parseInt(this.state.prevNum) ** parseInt(this.state.input )})
       }
   }
   
@@ -80,7 +77,6 @@ class App extends React.Component {
     this.setState({
       input: "",
       prevNum: "",
-      nextNum: "",
       result: ""
     })
   }
@@ -101,7 +97,7 @@ class App extends React.Component {
  
 
   render() {
-    // const { input, prevNum, nextNum, result } = this.state; 
+    // const { input, prevNum, result } = this.state; 
     return (
       <div className="App">
         <div className="calculator-border">
