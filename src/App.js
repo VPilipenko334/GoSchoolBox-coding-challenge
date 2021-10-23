@@ -28,50 +28,50 @@ class App extends React.Component {
     this.setState({ prevNum : this.state.input })
     let firstNum = this.state.input;
     this.setState({ input: firstNum + "+" })
-    this.setState.operation = "add";
+    this.setState({ operation: "add" })
   }
 
   subtract = () => {
     this.setState({ prevNum : this.state.input})
     let firstNum = this.state.input; 
     this.setState({ input: firstNum + "-" })
-    this.setState.operation = "subtract"
+    this.setState({ operation : "subtract" })
   }
 
   multiply = () => {
     this.setState({ prevNum : this.state.input })
     let firstNum = this.state.input; 
     this.setState({ input: firstNum + "*" })
-    this.setState.operation = "multiply"
+    this.setState({ operation: "multiply" })
   }
 
   divide = () => {
     this.setState({ prevNum : this.state.input }) 
     let firstNum = this.state.input; 
     this.setState({ input: firstNum + "/" })
-    this.setState.operation = "divide"
+    this.setState({ operation: "divide" })
   }
 
   exponent = () => {
-    this.setState({ prevNum : this.state.input })
     let firstNum = this.state.input;
-    this.setState({ input: firstNum + "^" })
-    this.setState.operation = "exponent"
+    this.setState({ prevNum: this.state.input, input: firstNum + "^"  })
+    this.setState({ operation: "exponent" })
   } 
 
   equals = () => {
     this.setState({ nextNum : this.state.input});
+    // this.setState({ result : this.state.result});
 
       if (this.state.operation === "add" ) {
-        this.setState({ result: this.state.prevNum + this.state.nextNum }) 
+        this.setState({ result: parseInt(this.state.prevNum) + parseInt(this.state.nextNum) })
       } else if (this.state.operation === "subtract") {
-        this.setState({ input: parseInt(this.state.prevNum) - parseInt(this.state.nextNum)})
+        this.setState({ result: parseInt(this.state.prevNum) - parseInt(this.state.nextNum)})
       } else if (this.operation === "multiply") {
-        this.setState({ input: parseInt(this.state.prevNum) * parseInt(this.state.nextNum )})
+        this.setState({ result: parseInt(this.state.prevNum) * parseInt(this.state.nextNum )})
       } else if (this.operation === "divide") {
-        this.setState({ input: parseInt(this.state.prevNum) / parseInt(this.state.nextNum )})
+        this.setState({ result: parseInt(this.state.prevNum) / parseInt(this.state.nextNum )})
       } else if (this.operation === "exponent") {
-        this.setState({ input: parseInt(this.state.prevNum) ** parseInt(this.state.nextNum )})
+        this.setState({ result: parseInt(this.state.prevNum) ** parseInt(this.state.nextNum )})
       }
   }
   
