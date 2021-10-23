@@ -30,6 +30,10 @@ class App extends React.Component {
   //   this.setState( { nextNum })
   // }
 
+  updateValues = (value) => {
+    this.setState({ input: this.state.input + value });
+  }
+
   add = () => {
     this.state.prevNum = this.state.input;
     const firstNum = this.state.input;
@@ -65,10 +69,6 @@ class App extends React.Component {
     this.setState.operation = "exponent"
   } 
 
-  updateValues = (value) => {
-    this.setState({ input: this.state.input + value });
-  }
-
   equals = (e) => {
     e.preventDefault();
     this.state.prevNum = this.state.input; 
@@ -96,6 +96,13 @@ class App extends React.Component {
     })
   }
 
+  createdBy = (e) => {
+    e.preventDefault();
+    this.setState({
+      input:"created by:",
+      result: "Veronika Pilipenko"
+    })
+  }
 
   goBack = (e) => {
     e.preventDefault();
@@ -153,6 +160,7 @@ class App extends React.Component {
               <div className="clear-button-wrapper">
                     <button className="clear-button" onClick={this.allClear}>CLEAR</button>
                 <br/>
+                    <button className="created-by" onClick={this.createdBy}>Click me!</button>
               </div>
 
             </div>
