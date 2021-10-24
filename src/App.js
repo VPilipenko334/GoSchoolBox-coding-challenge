@@ -16,7 +16,6 @@ class App extends React.Component {
       operation: "",
       result: ""
     };
-
   }
 
   updateValues = (value) => {
@@ -51,7 +50,7 @@ class App extends React.Component {
   equals = () => {
 
       if (this.state.operation === "add" ) {
-        this.setState({ result: parseInt(this.state.input) + parseInt(this.state.input) })
+        this.setState({ result: parseInt(this.state.input) + parseInt(this.state.input.split(1)) })
       } else if (this.state.operation === "subtract") {
         this.setState({ result: parseInt(this.state.number) - parseInt(this.state.input)})
       } else if (this.operation === "multiply") {
@@ -134,7 +133,7 @@ class App extends React.Component {
               <div className="clear-button-wrapper">
                     <button className="clear-button" onClick={this.allClear}>CLEAR</button>
                 <br/>
-                    <button className="created-by" onClick={this.createdBy}>Click me!</button>
+                    {/* <button className="created-by" onClick={this.createdBy}>Click me!</button> */}
               </div>
 
             </div>
