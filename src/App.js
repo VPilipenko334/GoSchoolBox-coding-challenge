@@ -16,7 +16,7 @@ class App extends React.Component {
       operation: "",
       result: ""
     };
-    
+
   }
 
   updateValues = (value) => {
@@ -51,15 +51,15 @@ class App extends React.Component {
   equals = () => {
 
       if (this.state.operation === "add" ) {
-        this.setState({ result: parseInt(this.state.input) + parseInt(this.state.input.split(1)) })
+        this.setState({ result: parseInt(this.state.input) + parseInt(this.state.number) })
       } else if (this.state.operation === "subtract") {
-        this.setState({ result: parseInt(this.state.number) - parseInt(this.state.input)})
+        this.setState({ result: parseInt(this.state.input) - parseInt(this.state.number)})
       } else if (this.operation === "multiply") {
-        this.setState({ result: parseInt(this.state.number) * parseInt(this.state.input )})
+        this.setState({ result: parseInt(this.state.input) * parseInt(this.state.number)})
       } else if (this.operation === "divide") {
-        this.setState({ result: parseInt(this.state.number) / parseInt(this.state.input )})
+        this.setState({ result: parseInt(this.state.input) / parseInt(this.state.number )})
       } else if (this.operation === "exponent") {
-        this.setState({ result: parseInt(this.state.number) ** parseInt(this.state.input )})
+        this.setState({ result: parseInt(this.state.input) ** parseInt(this.state.number )})
       }
   }
   
