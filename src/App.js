@@ -48,20 +48,60 @@ class App extends React.Component {
     this.setState({ number: this.state.input, input: firstNum + "^", operation: "exponent" })
   } 
 
-  equals = () => {
+// base case === subtraction 
+//PEMDAS 
 
-      if (this.state.operation === "add" ) {
-        this.setState({ result: parseInt(this.state.input) + parseInt(this.state.number) })
-      } else if (this.state.operation === "subtract") {
-        this.setState({ result: parseInt(this.state.input) - parseInt(this.state.number)})
-      } else if (this.operation === "multiply") {
-        this.setState({ result: parseInt(this.state.input) * parseInt(this.state.number)})
-      } else if (this.operation === "divide") {
-        this.setState({ result: parseInt(this.state.input) / parseInt(this.state.number )})
-      } else if (this.operation === "exponent") {
-        this.setState({ result: parseInt(this.state.input) ** parseInt(this.state.number )})
+// loop thrugh once and check for parenthesis
+// if '(' search from ')' --> evaluate parenthesis 
+// look for more opening parenthesis, if not, elseif statement for exponent 
+//no exponent --> keep going until subtraction 
+// check if there is another pair of parenthesis until no pair are left 
+// if no parenthesis are left in the whole thing; ;look for exponent 
+// keep evaluating until subtraction --> left to right 
+
+  evaluate = () => {
+    const pemdas = [ '(', ')', '^', '*', '/', '+', '-']
+
+    for(let i = 0; i < pemdas.length; i++) {
+      if (this.state.input.includes('('))
+        for(let j = 0; j < ')'; j++); {
+          if (this.state.input.includes('('))
+          // if it includes another opening parenthesis; exit the loop and check for another one parenthesis
+          // keep checking for opening parenthesis until there are none left 
+          // check for exponents here as well, go through the whole thing 
+        } else {
+          if (this.state.input.includes('^')) 
+          // evaluate 
+          // continue checking if there are more exponents 
+          // if no exponents, look for multiplication 
+          // if no multiplication, look for division
+          // addition
+          //subtraction 
+        }
       }
+    }
+
   }
+  // base case ==> for () would just be a number 
+  // remove parenthesis 
+
+
+
+
+  // equals = () => {
+  //   debugger 
+  //     if (this.state.operation === "add" ) {
+  //       this.setState({ result: parseInt(this.state.number) + parseInt(this.state.number) })
+  //     } else if (this.state.operation === "subtract") {
+  //       this.setState({ result: parseInt(this.state.input) - parseInt(this.state.number)})
+  //     } else if (this.operation === "multiply") {
+  //       this.setState({ result: parseInt(this.state.input) * parseInt(this.state.number)})
+  //     } else if (this.operation === "divide") {
+  //       this.setState({ result: parseInt(this.state.input) / parseInt(this.state.number )})
+  //     } else if (this.operation === "exponent") {
+  //       this.setState({ result: parseInt(this.state.input) ** parseInt(this.state.number )})
+  //     }
+  // }
   
   allClear = (e) => {
     e.preventDefault();
@@ -134,7 +174,7 @@ class App extends React.Component {
               <div className="clear-button-wrapper">
                     <button className="clear-button" onClick={this.allClear}>CLEAR</button>
                 <br/>
-                    {/* <button className="created-by" onClick={this.createdBy}>Click me!</button> */}
+                    <button className="created-by" onClick={this.createdBy}>Click me!</button>
               </div>
 
             </div>
