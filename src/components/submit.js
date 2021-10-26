@@ -1,7 +1,6 @@
 import React from "react";
 
-class Button extends React.Component {
-
+class Submit extends React.Component {
     render() {
         return (
             <div onClick={() => this.props.handleClick(this.props.children)}>
@@ -11,6 +10,4 @@ class Button extends React.Component {
     }
 }
 
-export default Button; 
-
-//this.props.input; 
+export default Submit; 
